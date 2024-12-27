@@ -45,6 +45,8 @@ dependencies:
   injectable:
   get_it:
   flutter_bloc: ^8.1.6
+  google_fonts: ^6.0.0
+
 
 
 dev_dependencies:

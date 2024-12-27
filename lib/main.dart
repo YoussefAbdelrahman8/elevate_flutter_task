@@ -1,4 +1,4 @@
-import 'package:elevate_flutter_task/UI/ProductsCatalogScreen/ProductsCatalogScreen.dart';
+import 'package:elevate_flutter_task/UI/ProductsCatalogScreen/ProductCatalog/ProductsCatalogScreen.dart';
 import 'package:flutter/material.dart';
 import 'AppStyle/AppStyle.dart';
 
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         Locale('ar'), // Arabic
       ],
       debugShowCheckedModeBanner: false,
-      locale: Locale("en"),
+      locale: const Locale("en"),
       theme: AppStyle.lightTheme,
       darkTheme: AppStyle.darkTheme,
       themeMode: ThemeMode.light,
