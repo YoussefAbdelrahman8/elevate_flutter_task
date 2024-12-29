@@ -46,6 +46,9 @@ dependencies:
   get_it:
   flutter_bloc: ^8.1.6
   google_fonts: ^6.0.0
+  dio: ^5.7.0
+  dartz: ^0.10.1
+
 
 
 

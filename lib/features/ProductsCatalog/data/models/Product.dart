@@ -1,3 +1,4 @@
+import '../../domain/entities/ProductEntity.dart';
 import 'Rating.dart';
 
 /// id : 1
@@ -10,13 +11,14 @@ import 'Rating.dart';
 
 class Product {
   Product({
-      this.id, 
-      this.title, 
-      this.price, 
-      this.description, 
-      this.category, 
-      this.image, 
-      this.rating,});
+    this.id,
+    this.title,
+    this.price,
+    this.description,
+    this.category,
+    this.image,
+    this.rating,
+  });
 
   Product.fromJson(dynamic json) {
     id = json['id'];
@@ -27,6 +29,7 @@ class Product {
     image = json['image'];
     rating = json['rating'] != null ? Rating.fromJson(json['rating']) : null;
   }
+
   num? id;
   String? title;
   num? price;
@@ -49,4 +52,13 @@ class Product {
     return map;
   }
 
+  ProductEntity toProductEntity() {
+    return ProductEntity(
+      id: this.id,
+      title: this.title,
+      image: this.image,
+      price: this.price,
+      rating: this.rating?.rate,
+    );
+  }
 }
