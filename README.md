@@ -1,16 +1,33 @@
-# elevate_flutter_task
+~~# Elevate Flutter Task
 
-A new Flutter project.
+This project is a Flutter-based mobile application that displays a product catalog, where users can search for products
+and view them in a grid format. It utilizes state management with the `Bloc` pattern and integrates a custom `AppBar`,
+caching for network images, and error handling with Flutter Toast notifications.
+
+## Features
+
+- **Product Catalog**: Displays a list of products fetched from an API or local source.
+- **Search Functionality**: Allows users to search for products by name.
+- **Custom AppBar**: Includes a branded logo, a search bar, and a shopping cart icon.
+- **State Management**: Uses `Flutter Bloc` for managing app states (loading, success, error).
+- **Network Image Caching**: Uses the `cached_network_image` package to cache product images and improve performance.
+- **Error Handling**: Shows error messages using `Fluttertoast` in case of network issues or data retrieval errors.
+- **MVVM pattern**
+- **Repository pattern**
+- **DI (injectable-get it)**
+
+## Screenshots
+
+### Product Catalog Screen
+
+![Product Catalog Screen](assets/screenshots/screenshot1.png)
+
+![Product Catalog Screen](assets/screenshots/screenshot2.png)
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### 1. Clone the repository
 
-A few resources to get you started if this is your first Flutter project:
+```bash
+https://github.com/YoussefAbdelrahman8/elevate_flutter_task.git~~
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
