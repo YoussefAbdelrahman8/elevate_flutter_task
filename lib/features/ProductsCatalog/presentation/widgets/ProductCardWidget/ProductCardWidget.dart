@@ -1,6 +1,7 @@
-import 'package:elevate_flutter_task/UI/ProductsCatalogScreen/ProductCatalog/ProductCardWidget/ProductDetailsDesign/ProductDetailsDesign.dart';
-import 'package:elevate_flutter_task/UI/ProductsCatalogScreen/ProductCatalog/ProductCardWidget/ProductImageDesign/ProductImageDesign.dart';
 import 'package:flutter/material.dart';
+
+import 'ProductDetailsDesign/ProductDetailsDesign.dart';
+import 'ProductImageDesign/ProductImageDesign.dart';
 
 class ProductCardWidget extends StatelessWidget {
   const ProductCardWidget({super.key});

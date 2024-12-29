@@ -1,11 +1,16 @@
-import 'package:elevate_flutter_task/UI/ProductsCatalogScreen/ProductCatalog/ProductsCatalogScreen.dart';
+import 'package:elevate_flutter_task/features/ProductsCatalog/presentation/pages/ProductsCatalogScreen.dart';
+import 'package:elevate_flutter_task/core/routes_manager/route_generator.dart';
+import 'package:elevate_flutter_task/core/routes_manager/routes.dart';
 import 'package:flutter/material.dart';
-import 'AppStyle/AppStyle.dart';
+
+import 'core/di/di.dart';
+import 'core/remote/api_manager.dart';
+import 'core/resources/theme_manager.dart';
+import 'features/ProductsCatalog/data/data_sources/DataSource_impl/productsDaoApi_impl.dart';
 
 void main() {
-  runApp(
-    const MyApp(),
-  );
+  configureDependencies();
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -20,14 +25,12 @@ class MyApp extends StatelessWidget {
       ],
       debugShowCheckedModeBanner: false,
       locale: const Locale("en"),
-      theme: AppStyle.lightTheme,
-      darkTheme: AppStyle.darkTheme,
+      theme: ThemeManager.lightTheme,
+      darkTheme: ThemeManager.darkTheme,
       themeMode: ThemeMode.light,
       title: 'Flutter Template',
-      routes: {
-        ProductsCatalogScreen.routeName: (_) => const ProductsCatalogScreen(),
-      },
-      initialRoute: ProductsCatalogScreen.routeName,
+      onGenerateRoute: RouteGenerator.getRoute,
+      initialRoute: Routes.productsCatalogScreenRoute,
     );
   }
 }
