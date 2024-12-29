@@ -1,13 +1,15 @@
+import 'package:elevate_flutter_task/features/ProductsCatalog/domain/entities/ProductEntity.dart';
 import 'package:flutter/material.dart';
 
 class ProductDetailsDesign extends StatelessWidget {
-  const ProductDetailsDesign({super.key});
+  final ProductEntity product;
+
+  const ProductDetailsDesign({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-    String x = "aslkdlk;ldksfl;kf;lsdkf;lskdf;lksdl;fk;lsdkf;lksd;lfks;df";
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
@@ -16,7 +18,8 @@ class ProductDetailsDesign extends StatelessWidget {
         children: [
           Text(
             overflow: TextOverflow.ellipsis,
-            "${x.substring(0, 12)}\n${x.substring(12)}" ?? "",
+            "${product.title?.substring(0, 12) ?? ""}\n${product.title?.substring(12) ?? ""}" ??
+                "",
             style: Theme.of(context).textTheme.bodyMedium,
           ),
           Padding(
@@ -25,11 +28,11 @@ class ProductDetailsDesign extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "2000",
+                  product.price.toString(),
                   style: Theme.of(context).textTheme.bodyMedium,
                 ),
                 Text(
-                  "4000EGP",
+                  "${((product.price ?? 0) * 2).toString()}EGP",
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                       fontSize: 11,
                       color: Theme.of(context).colorScheme.onSecondary,
@@ -43,7 +46,7 @@ class ProductDetailsDesign extends StatelessWidget {
           Row(
             children: [
               Text(
-                "Review (4.6)",
+                "Review (${product.rating ?? ""})",
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
               const ImageIcon(

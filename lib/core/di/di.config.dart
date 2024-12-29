@@ -21,6 +21,8 @@ import '../../features/ProductsCatalog/domain/repositories/productsRepo.dart'
     as _i813;
 import '../../features/ProductsCatalog/domain/use_cases/ProductUseCase.dart'
     as _i1034;
+import '../../features/ProductsCatalog/presentation/manager/product_catalog_cubit.dart'
+    as _i851;
 import '../remote/api_manager.dart' as _i822;
 
 extension GetItInjectableX on _i174.GetIt {
@@ -41,6 +43,8 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i370.ProductsRepoImpl(gh<_i459.ProductsDao>()));
     gh.factory<_i1034.ProductUseCase>(
         () => _i1034.ProductUseCase(gh<_i813.ProductsRepo>()));
+    gh.factory<_i851.ProductCatalogCubit>(
+        () => _i851.ProductCatalogCubit(gh<_i1034.ProductUseCase>()));
     return this;
   }
 }

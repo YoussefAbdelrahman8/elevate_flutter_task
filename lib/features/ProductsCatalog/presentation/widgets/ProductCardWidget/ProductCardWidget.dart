@@ -1,10 +1,13 @@
+import 'package:elevate_flutter_task/features/ProductsCatalog/domain/entities/ProductEntity.dart';
 import 'package:flutter/material.dart';
 
 import 'ProductDetailsDesign/ProductDetailsDesign.dart';
 import 'ProductImageDesign/ProductImageDesign.dart';
 
 class ProductCardWidget extends StatelessWidget {
-  const ProductCardWidget({super.key});
+  ProductEntity product;
+
+  ProductCardWidget({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -13,13 +16,20 @@ class ProductCardWidget extends StatelessWidget {
       borderOnForeground: true,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20),
-        side:  BorderSide(
-          color:Theme.of(context).colorScheme.onPrimary.withOpacity(0.3),
+        side: BorderSide(
+          color: Theme.of(context).colorScheme.onPrimary.withOpacity(0.3),
           width: 2,
         ),
       ),
-      child: const Column(
-        children: [ProductImageDesign(), ProductDetailsDesign()],
+      child: Column(
+        children: [
+          ProductImageDesign(
+            image: product.image ?? "",
+          ),
+          ProductDetailsDesign(
+            product: product,
+          ),
+        ],
       ),
     );
   }
